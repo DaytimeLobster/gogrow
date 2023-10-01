@@ -15,7 +15,7 @@ GoGrow is open source, ad-free, and easily self-hosted. It provides access to an
 
 ## Collaborative and Flexible
 
-GoGrow supports collaborative mapping and image annotation by LAN access, making it a useful tool for team projects that require detailed visual data feedback. You can annotate logos, art pieces, or character designs - pretty much anything in PNG or JPG format.
+GoGrow supports collaborative mapping and image annotation by LAN access, making it a useful tool for team projects that require detailed visual data feedback. You can annotate logos, art pieces, or character designs - pretty much anything in PNG or JPG format (RAW and DNG support is experimental at this time).
 
 ## Features
 
