@@ -131,7 +131,7 @@ If using Gogrow as a Flask app, on startup Gogrow will ask if you want to use th
 3. Fill out the popup form to add details for your marker, such as notes, a description, the color of the icon, and the icon itself. You can choose from the included icons or add your own to the `/icons` folder in the app's root directory.
 4. To add a line, switch the "mode" button to "Line Mode." 
 5. Click once to place the start point of the line, then click again to set the end point. A popup will appear, similar to the marker popup.
-6. Fill out the form in the popup to add details for your line, such as a description, notes, and color. Your line will then appear on the map and in the marker list table at the bottom of the screen.
+6. Fill out the form in the popup to add details for your line, such as a description, notes, and color. Your line will then appear on the map and in the marker list table at the bottom of the screen. You can make polygons or complex shapes from multiple lines - Gogrow will "snap" the starting point of a new line to a nearby line if it is close enough. 
 7. Click or tap on the marker or line ID in the marker table and the map will jump to that location - you can also click or tap on the notes for that marker or line, and a popup for viewing notes in detail will display in a journal-like fashion.
 
 ### Details Page
