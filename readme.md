@@ -168,6 +168,17 @@ GoGrow includes a custom theme option that's easy to edit via the included confi
 ## Contributions
 Contributions, collaboration, pull requests - We welcome all of these. If you have a good idea that's in the scope of the GoGrow project, please open a pull request or jump into a discussion with us. We'd love your feedback on how GoGrow can be even more useful and functional!
 
+## To-do
+GoGrow is a work in progress - please keep this in mind, though I'll try my best not to introduce any major breaking changes or backward-compatibility issues. Export and save your data often!
+
+To do list:
+- general bug fixes
+- general UI/UX improvements
+- implement feedback gathered from users
+- make it easier for people to add custom icons and textures to GoGrow
+- a feature to show/pick from most used icons when adding a new marker using the pop up modal
+- thoroughly fix/test DNG and RAW support
+
 ## Support
 
 As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [donate to my coffee fund on Patreon](https://www.patreon.com/daytimelobster)
