@@ -35,7 +35,7 @@ GoGrow supports collaborative mapping and image annotation by LAN access, making
 
 - Data Security: Export your data whenever needed. GoGrow does not send your data to any third parties.
 
-- Docker and Multi-Platform Support: GoGrow is easy to install with docker or by simple command line commands. Instructions are provided for running the app on your LAN, enabling collaboration on maps with others, even on mobile devices and tablets (through the device's web browser) with Gogrow's responsive web design and user interface.
+- Docker and Multi-Platform Support: GoGrow is easy to install with docker or by simple command line commands. Instructions are provided for running the app on your LAN, enabling collaboration on maps with others, even on mobile devices and tablets (through the device's web browser) with GoGrow's responsive web design and user interface.
  
 - Extensive rich text journal system: GoGrow provides a comprehensive journal system that allows you to create and manage detailed journal entries. The rich text editor (Quill) enables you to format text, add images, create lists, and apply styles to your journal content seamlessly. Journal entries are organized into image folders, just like the data for markers and lines - making it easy to navigate and manage your journal entries. The interface allows you to view and modify the title, content, linked items, and favorite status of each journal entry, and includes a powerful journal search function.
 
@@ -73,7 +73,7 @@ copyright 2023 Firespawn Studios, LLC - Digital and Physical Arts Studio
 
 ### Install with Docker Compose (recommended):
 
-Docker compose and Docker run are the easiest ways to get up and running with Gogrow. 
+Docker compose and Docker run are the easiest ways to get up and running with GoGrow. 
 
 Ensure Docker and Docker Compose are installed and running correctly, and you can follow the below steps:
 
@@ -96,11 +96,11 @@ Ensure Docker and Docker Compose are installed and running correctly, and you ca
 4. In your terminal, type `docker-compose up -d` to build and run the GoGrow app as a Docker service.
 5. Navigate to the IP address and port you've set (default is localhost:5555), and enjoy the app!
 
-These Docker Compose commands spin up a new GoGrow service using Docker on port 5000 and makes the "backups" and "img" subdirectories easy to access. You may also decide to map the icons or textures folders if you wish to use your own icons and textures in Gogrow!
+These Docker Compose commands spin up a new GoGrow service using Docker on port 5000 and makes the "backups" and "img" subdirectories easy to access. You may also decide to map the icons or textures folders if you wish to use your own icons and textures in GoGrow!
 
 ### Install as flask web app:
 
-You may also choose to run Gogrow as a flask web app directly - you can follow the below instructions to accomplish this.
+You may also choose to run GoGrow as a flask web app directly - you can follow the below instructions to accomplish this.
 
 1. Make sure you have Python 3.11 installed on your machine. If not, you can download it from the official Python website.
 2. Clone the GoGrow repository or download the zip file from the repository.
@@ -112,9 +112,9 @@ You may also choose to run Gogrow as a flask web app directly - you can follow t
 
 ### Initial App Startup
 
-If using Docker, Gogrow should be started automatically and available at the specified port used in the docker compose, or docker run command.
+If using Docker, GoGrow should be started automatically and available at the specified port used in the docker compose, or docker run command.
 
-If using Gogrow as a Flask app, on startup Gogrow will ask if you want to use the default settings (port 5555) - you can enter "yes" here to use these settings, or "no" to specify the port and other settings that Gogrow should use when it launches.
+If using GoGrow as a Flask app, on startup GoGrow will ask if you want to use the default settings (port 5555) - you can enter "yes" here to use these settings, or "no" to specify the port and other settings that GoGrow should use when it launches.
 
 
 ### Index Page
@@ -131,7 +131,7 @@ If using Gogrow as a Flask app, on startup Gogrow will ask if you want to use th
 3. Fill out the popup form to add details for your marker, such as notes, a description, the color of the icon, and the icon itself. You can choose from the included icons or add your own to the `/icons` folder in the app's root directory.
 4. To add a line, switch the "mode" button to "Line Mode." 
 5. Click once to place the start point of the line, then click again to set the end point. A popup will appear, similar to the marker popup.
-6. Fill out the form in the popup to add details for your line, such as a description, notes, and color. Your line will then appear on the map and in the marker list table at the bottom of the screen. You can make polygons or complex shapes from multiple lines - Gogrow will "snap" the starting point of a new line to a nearby line if it is close enough. 
+6. Fill out the form in the popup to add details for your line, such as a description, notes, and color. Your line will then appear on the map and in the marker list table at the bottom of the screen. You can make polygons or complex shapes from multiple lines - GoGrow will "snap" the starting point of a new line to a nearby line if it is close enough. 
 7. Click or tap on the marker or line ID in the marker table and the map will jump to that location - you can also click or tap on the notes for that marker or line, and a popup for viewing notes in detail will display in a journal-like fashion.
 
 ### Details Page
@@ -161,7 +161,7 @@ If using Gogrow as a Flask app, on startup Gogrow will ask if you want to use th
 9. Journal entries are backed up using the Settings page "backup" feature, and can be restored via the restore dropdown if the image folder is deleted. 
 
 ## Contributions
-Contributions, collaboration, pull requests - We welcome all of these. If you have a good idea that's in the scope of the Gogrow project, please open a pull request or jump into a discussion with us. We'd love your feedback on how Gogrow can be even more useful and functional!
+Contributions, collaboration, pull requests - We welcome all of these. If you have a good idea that's in the scope of the GoGrow project, please open a pull request or jump into a discussion with us. We'd love your feedback on how GoGrow can be even more useful and functional!
 
 ## Support
 
