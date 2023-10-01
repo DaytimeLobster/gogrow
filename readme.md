@@ -158,6 +158,6 @@ Contributions, collaboration, pull requests - We welcome all of these. If you ha
 
 ## Support
 
-As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [Donate to my coffee fund on Patreon](patreon.com/user?u=94595844)
+As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [Donate to my coffee fund on Patreon](patreon.com/daytimelobster)
 
 Any support is greatly appreciated and will be used to continue development and maintain this project!
