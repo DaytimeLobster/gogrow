@@ -110,11 +110,18 @@ You may also choose to run Gogrow as a flask web app directly - you can follow t
 
 ## How to Use GoGrow
 
+### Initial App Startup
+
+If using Docker, Gogrow should be started automatically and available at the specified port used in the docker compose, or docker run command.
+
+If using Gogrow as a Flask app, on startup Gogrow will ask if you want to use the default settings (port 5555) - you can enter "yes" here to use these settings, or "no" to specify the port and other settings that Gogrow should use when it launches.
+
+
 ### Index Page
 
 1. Upon opening GoGrow for the first time, you'll see a blank Leaflet map container, a table at the bottom of the page for displaying the marker/line information that has been added, and a sidebar with various controls and buttons.
-2. To begin, upload an image using the upload button in the sidebar. This can be any image you wish to annotate, such as a high-resolution drone photo or a simple overhead picture taken from your smartphone.
-3. Once your image(s) are uploaded, select the image you want to annotate by clicking on it in the sidebar.
+2. To begin, upload an image using the upload button in the sidebar to select an image to upload. This can be any image you wish to annotate, such as a high-resolution drone photo or a simple overhead picture taken from your smartphone.
+3. Once your image(s) are uploaded by clicking or tapping the upload button, select the image you want to annotate by clicking or tapping on it in the sidebar.
 4. Your selected image will load, along with any associated database containing marker and line data. If you haven't created any markers or lines yet, don't worry, we'll do that next!
 
 #### Adding Markers and Lines
