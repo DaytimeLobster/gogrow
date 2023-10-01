@@ -35,7 +35,7 @@ GoGrow supports collaborative mapping and image annotation by LAN access, making
 
 - Data Security: Export your data whenever needed. GoGrow does not send your data to any third parties.
 
-- Docker and Multi-Platform Support: GoGrow includes all necessary dependencies and provides executables for Linux and Windows. Instructions are provided for running the app on your LAN, enabling collaboration on maps with others, even on mobile devices and tablets (through web browser).
+- Docker and Multi-Platform Support: GoGrow is easy to install with docker or by simple command line commands. Instructions are provided for running the app on your LAN, enabling collaboration on maps with others, even on mobile devices and tablets (through the device's web browser) with Gogrow's responsive web design and user interface.
  
 - Extensive rich text journal system: GoGrow provides a comprehensive journal system that allows you to create and manage detailed journal entries. The rich text editor (Quill) enables you to format text, add images, create lists, and apply styles to your journal content seamlessly. Journal entries are organized into image folders, just like the data for markers and lines - making it easy to navigate and manage your journal entries. The interface allows you to view and modify the title, content, linked items, and favorite status of each journal entry, and includes a powerful journal search function.
 
