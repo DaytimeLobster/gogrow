@@ -162,6 +162,9 @@ If using GoGrow as a Flask app, on startup GoGrow will ask if you want to use th
 8. You can export all journal entries for the selected image folder as a CSV file by clicking or tapping the "Export as CSV" button. This allows you to backup or work with the data outside of the app.
 9. Journal entries are backed up using the Settings page "backup" feature, and can be restored via the restore dropdown if the image folder is deleted. 
 
+### config.cfg
+GoGrow includes a custom theme option that's easy to edit via the included config.cfg file - just open it up in a text editor, and you should see a section towards the bottom of the config file for making your own custom theme. You can change each hex color value to the color of your choice, and then restart the gogrow app after saving your changes to the config file. You should be able to select the custom theme on the settings page, and then you should see your new theme color changes across the app.
+
 ## Contributions
 Contributions, collaboration, pull requests - We welcome all of these. If you have a good idea that's in the scope of the GoGrow project, please open a pull request or jump into a discussion with us. We'd love your feedback on how GoGrow can be even more useful and functional!
 
