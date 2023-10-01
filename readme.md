@@ -2,6 +2,8 @@
 
 GoGrow is a Flask application written in HTML, CSS, JS, and Python. It's designed to assist gardeners, farmers, project managers, drone operators, preppers, planners, or anyone in need of an efficient mapping or image annotation tool to mark a place, feature, or thing.
 
+<p align="center"> <a href="http://www.youtube.com/watch?v=8lQdxjow-kI"> <img src="http://img.youtube.com/vi/8lQdxjow-kI/0.jpg" alt="GoGrow App Demo" width="50%" height="50%"> </a> </p>
+
 ## Purpose of GoGrow
 GoGrow is an open-source application that provides a thoughtful UI to annotate, mark, and keep track of images or projects. It empowers users to plan and track their changes to projects, whether on a large scale or on a more personal level. With modern access to high-resolution camera drones and satellite imagery, users can leverage a vast array of public and private imagery to upload and work with in GoGrow - from expansive territories, to personal homesteads, to backyard square-foot gardens. GoGrow prioritizes user privacy and data ownership, offering a user-friendly workflow for local annotation and collaboration on PNG and JPG images. Its versatility and modularity make it suitable for diverse industries and individuals seeking precise image annotation and marking. With GoGrow, you can seamlessly place and plan projects, structures, and associated information while enjoying a user-centric experience.
 
