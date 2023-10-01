@@ -1,0 +1,228 @@
+/* Beach theme */
+.beach-mode {
+    --primary-bg: #f4f0bb;
+    --primary-text: #5f6c7b;
+    --secondary-bg: #c7d3d4;
+    --secondary-text: #52616b;
+    --table-row-bg: #e1e6e4;
+    --table-row-alt-bg: #b8c4c2;
+    --table-row-text: #3b454e;
+    --details-head-text: #3b454e;
+    --details-body-text: #3b454e;
+    --details-footer-text: #3b454e;
+    --about-head-text: #3b454e;
+    --about-body-text: #3b454e;
+    --about-footer-text: #3b454e;
+    --error-head-text: #3b454e;
+    --error-body-text: #3b454e;
+    --error-footer-text: #3b454e;
+    --right-side-column: #3b454e;
+    --edit-marker-modal: #3b454e;
+    --primary-hover-text: #4b2e16;
+    --primary-hover-bg: #98FB98;
+    --tertiary-bg: #3db4bd;
+    --tertiary-bg-text: #fcda92;
+    --tertiary-bg-alt: #f4e8bb;
+    --tertiary-bg-alt-text: #3b454e;
+    --primary-btn-bg: #024348;
+    --primary-btn-text: #ffffff;
+    --secondary-btn-bg: #587476;
+    --secondary-btn-text: #3b454e;
+}
+
+/* Forest theme */
+.forest-mode {
+    --primary-bg: #def4c6;
+    --primary-text: #386641;
+    --secondary-bg: #bcd8c1;
+    --secondary-text: #143601;
+    --table-row-bg: #a3cca3;
+    --table-row-alt-bg: #89b489;
+    --table-row-text: #143601;
+    --details-head-text: #143601;
+    --details-body-text: #143601;
+    --details-footer-text: #143601;
+    --about-head-text: #143601;
+    --about-body-text: #143601;
+    --about-footer-text: #143601;
+    --error-head-text: #143601;
+    --error-body-text: #143601;
+    --error-footer-text: #143601;
+    --right-side-column: #143601;
+    --edit-marker-modal: #143601;
+    --primary-hover-text: #4b2e16;
+    --primary-hover-bg: #98FB98;
+    --tertiary-bg: #50a353;
+    --tertiary-bg-text: #143601;
+    --tertiary-bg-alt: #cae6ab;
+    --tertiary-bg-alt-text: #143601;
+    --primary-btn-bg: #386641;
+    --primary-btn-text: #ffffff;
+    --secondary-btn-bg: #94a484;
+    --secondary-btn-text: #143601;
+}
+
+/* Sunset theme */
+.sunset-mode {
+    --primary-bg: #fe9481;
+    --primary-text: #664e4c;
+    --secondary-bg: #fcda92;
+    --secondary-text: #503939;
+    --table-row-bg: #fbc4ab;
+    --table-row-alt-bg: #f7a97a;
+    --table-row-text: #503939;
+    --details-head-text: #503939;
+    --details-body-text: #503939;
+    --details-footer-text: #503939;
+    --about-head-text: #503939;
+    --about-body-text: #503939;
+    --about-footer-text: #503939;
+    --error-head-text: #503939;
+    --error-body-text: #503939;
+    --error-footer-text: #503939;
+    --right-side-column: #503939;
+    --edit-marker-modal: #503939;
+    --primary-hover-text: #4b2e16;
+    --primary-hover-bg: #98FB98;
+    --tertiary-bg: #ffc9a5;
+    --tertiary-bg-text: #503939;
+    --tertiary-bg-alt: #ffdbd4;
+    --tertiary-bg-alt-text: #503939;
+    --primary-btn-bg: #664e4c;
+    --primary-btn-text: #ffffff;
+    --secondary-btn-bg: #e9ab83;
+    --secondary-btn-text: #503939;
+}
+
+/* Amethyst theme */
+.amethyst-mode {
+    --primary-bg: #2c2c2c;
+    --primary-text: #f0f0f0;
+    --secondary-bg: #7d6381;
+    --secondary-text: #f0f0f0;
+    --table-row-bg: #f2f2f2;
+    --table-row-alt-bg: #c2b0bc;
+    --table-row-text: #f0f0f0;
+    --details-head-text: #f0f0f0;
+    --details-body-text: #f0f0f0;
+    --details-footer-text: #f0f0f0;
+    --about-head-text: #f0f0f0;
+    --about-body-text: #f0f0f0;
+    --about-footer-text: #f0f0f0;
+    --error-head-text: #f0f0f0;
+    --error-body-text: #f0f0f0;
+    --error-footer-text: #f0f0f0;
+    --right-side-column: #333333;
+    --edit-marker-modal: #4d394b;
+    --primary-hover-text: #4b2e16;
+    --primary-hover-bg: #98FB98;
+    --tertiary-bg: #beb4bb;
+    --tertiary-bg-text: #f0f0f0;
+    --tertiary-bg-alt: #886f9bff;
+    --tertiary-bg-alt-text: #f0f0f0;
+    --primary-btn-bg: #888888;
+    --primary-btn-text: #ffffff;
+    --secondary-btn-bg: #a28993;
+    --secondary-btn-text: #868686;
+}
+
+.light-mode {
+    /* Define light mode styles */
+    --primary-bg: #f2f2f2;
+    --primary-text: #2d2d2d;
+    --secondary-bg: #e0e0e0;
+    --secondary-text: #333333;
+    --table-row-bg: #fafafa;
+    --table-row-alt-bg: #d9d9d9;
+    --table-row-text: #333333;
+    --details-head-text: #333333;
+    --details-body-text: #333333;
+    --details-footer-text: #333333;
+    --about-head-text: #333333;
+    --about-body-text: #333333;
+    --about-footer-text: #333333;
+    --error-head-text: #333333;
+    --error-body-text: #333333;
+    --error-footer-text: #333333;
+    --right-side-column: #333333;
+    --edit-marker-modal: #333333;
+    --primary-hover-text: #4b2e16;
+    --primary-hover-bg: #98FB98;
+    --tertiary-bg: #b0b7af;
+    --tertiary-bg-text: #333333;
+    --tertiary-bg-alt: #e2e2d4;
+    --tertiary-bg-alt-text: #333333;
+    --primary-btn-bg: #808080;
+    --primary-btn-text: #ffffff;
+    --secondary-btn-bg: #a9bba9;
+    --secondary-btn-text: #333333;
+}
+
+.dark-mode {
+    /* Define dark mode styles */
+    --primary-bg: #2d2d2d;
+    --primary-text: #f0f0f0;
+    --secondary-bg: #1a1a1a;
+    --secondary-text: #f0f0f0;
+    --table-row-bg: #444444;
+    --table-row-alt-bg: #333333;
+    --table-row-text: #f0f0f0;
+    --details-head-text: #f0f0f0;
+    --details-body-text: #f0f0f0;
+    --details-footer-text: #f0f0f0;
+    --about-head-text: #f0f0f0;
+    --about-body-text: #f0f0f0;
+    --about-footer-text: #f0f0f0;
+    --error-head-text: #f0f0f0;
+    --error-body-text: #f0f0f0;
+    --error-footer-text: #f0f0f0;
+    --right-side-column: #888888;
+    --edit-marker-modal: #d9d9d9;
+    --primary-hover-text: #4b2e16;
+    --primary-hover-bg: #98FB98;
+    --tertiary-bg: #8b8e90;
+    --tertiary-bg-text: #f0f0f0;
+    --tertiary-bg-alt: #8e8585;
+    --tertiary-bg-alt-text: #f0f0f0;
+    --primary-btn-bg: #b94a48;
+    --primary-btn-text: #ffffff;
+    --secondary-btn-bg: #625d5d;
+    --secondary-btn-text: #868686;
+}
+
+/* Apply text color to table rows */
+#marker-list tr {
+    color: var(--table-row-text);
+}
+
+/* Overriding Bootstrap's .table-striped styles */
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: var(--table-row-bg);
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+    background-color: var(--table-row-alt-bg);
+}
+
+.sidebar {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+.body-content {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+}
+
+.folder-list {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+#edit-marker-modal {
+    background-color: var(--secondary-bg); 
+    color: var(--secondary-text);
+}
+

@@ -1,0 +1,38 @@
+# .dockerignore
+
+# Python Bytecode
+**/__pycache__
+*.py[co]
+
+# Environments and build artifects
+env2/
+obj/
+build/
+dist/
+
+# Visual Studio files
+**/.vs
+*.pyproj
+*.pyproj.user
+*.sln
+
+# Libraries and JSON files
+libman.json
+
+# Docker files
+Dockerfile
+docker instructions.txt
+
+# Licensing and Specifications
+LICENSE.txt
+runserver.spec
+
+# Ignore Git and other metadata files
+**/.git
+**/.gitignore
+.dockerignore
+**/.env
+*.log
+*.csv
+*.json
+*.xml

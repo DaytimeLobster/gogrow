@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<section class="how-to-guide">
+    <div class="container">
+        <div id="header-about-text"><h3>How to Use GoGrow</h3></div>
+
+        <article class="step">
+            <br />
+            <h3>Index Page</h3>
+            <ol class="about-list">
+                <li>Upon opening GoGrow for the first time, you'll see a blank Leaflet map, a table at the bottom of the page for displaying the marker/line information that has been added, and a sidebar with various controls and buttons.</li>
+                <li>To begin, upload an image using the upload button in the sidebar. This can be any image you wish to annotate, such as a high-resolution drone or satellite photo or a simple picture taken from your smartphone or camera.</li>
+                <li>Once your image(s) are uploaded, select the image you want to annotate by clicking on it in the sidebar.</li>
+                <li>Your selected image will load, along with any associated database containing marker and line data. If you haven't created any markers or lines yet, don't worry, we'll do that next!</li>
+                <li>To add a marker, ensure that the "mode" button is in "Marker Mode."</li>
+                <li>Click on the location on your map where you want to place the marker. A popup will appear.</li>
+                <li>Fill out the popup form to add details for your marker, such as notes, a description, the color of the icon, and the icon itself. You can choose from the included icons or add your own to the `/icons` folder in the app's root directory.</li>
+                <li>To add a line, switch the "mode" button to "Line Mode."</li>
+                <li>Click once to place the start point of the line, then click again to set the end point. A popup will appear, similar to the marker popup.</li>
+                <li>Fill out the form in the popup to add details for your line, such as a description, notes, and color. Your line will then appear on the map and in the marker list table at the bottom of the screen.</li>
+                <li>Click or tap on the marker or line ID in the marker table and the map will jump to that location - you can also click or tap on the notes for that marker or line, and a popup for viewing notes in detail will display in a journal-like fashion.</li>
+            </ol>
+        </article>
+        <br />
+        <article class="step">
+            <br />
+            <h3>Details Page</h3>
+            <ol class="about-list">
+                <li>On the details page, use the dropdown at the top to select which image folder you want to load and edit marker or line data from.</li>
+                <li>Once you've selected a directory, the details marker list table populates with all of the markers and lines associated with that directory.</li>
+                <li>To edit a marker or line, click or tap on its row in the table. The marker or row you just selected will be highlighted, and a modal will pop up below the details marker table with the current information for the chosen marker or line for editing.</li>
+                <li>Edit the marker or line's description, notes, color, and, in the case of markers, their icon type.</li>
+                <li>If you want, you can click the "Export info as CSV" button to download all marker and line information for the chosen directory into a .CSV spreadsheet for editing or printing out outside of the app.</li>
+                <li>You can click on several of the table headers on the details page to sort the markers and lines by column, and you can also utilize the search bar to easily search through all of your marker and line descriptions to find the one you want to interact with seamlessly.</li>
+            </ol>
+        </article>
+        <br />
+        <article class="step">
+            <br />
+            <h3>Journals Page</h3>
+            <ol class="about-list">
+                <li>On the journals page, you can create, edit, and manage your journal entries associated with uploaded image folders.</li>
+                <li>Select the desired image folder from the "Image Folder" dropdown menu ("Select a journal:"). This will load the journal and all entries for the selected image folder.</li>
+                <li>The journal entries will be displayed in a list format, showing the entry date and title in the sidebar on the right or bottom of the screen, depending on if you are using desktop, tablet, or a smaller device.</li>
+                <li>To view the details of a journal entry, click or tap on the corresponding entry in the journal entries list on the sidebar. The entry's title and content will appear, along with any linked items. You can use the "Star" checkbox near the journal title to mark a journal as a favorite, so that it will always appear at the top of the journal entries list for easy access.</li>
+                <li>You can edit a journal entry by modifying the title, content, linked items, or favorite status. Changes will be saved when you submit the edits using the "Submit Journal Edits" button at the bottom of the journal editor.</li>
+                <li>To delete a journal entry, click or tap on the "Delete" button. A confirmation prompt will appear, and upon confirmation, the entry will be permanently removed.</li>
+                <li>Use the search bar to search for specific journal entries based on titles, contents, dates, linked item notes, or linked item descriptions. The search results will update in real-time as you type.</li>
+                <li>You can export all journal entries for the selected image folder as a CSV file by clicking or tapping the "Export as CSV" button. This allows you to backup or work with the data outside of the app.</li>
+                <li>Journal entries are backed up using the Settings page "backup" feature, and can be restored via the restore dropdown if the image folder is deleted.</li>
+            </ol>
+        </article>
+        <br />
+        <article class="step">
+            <br />
+            <h3>Settings Page</h3>
+            <ol class="about-list">
+                <li>On the settings page, you can change the theme to one of the various included themes, and you can also change the Leaflet map background "texture" to any image you want. You can add your own background texture images to the `/static/textures` directory and they will be selectable in this dropdown whenever the settings page is accessed next.</li>
+                <li>To back up your image folder/database, select it in the dropdown menu and hit "Backup." This creates a tar.gz copy of the image folder/database and stores it in the `/backups` folder.</li>
+                <li>To restore a backup, choose it from the "Restore Backup" dropdown and click the "Restore" button. This will restore a copy of the chosen backup to the `/img` folder, but only if there isn't already an existing image folder with the same name. This is for security reasons - please delete the image folder in `/img` before attempting to restore a backup for that image folder.</li>
+            </ol>
+        </article>
+        <br />
+        <br />
+        <article class="step">
+            <h3>Support & Contributions</h3>
+            <p>Contributions, collaboration, pull requests - all of these are welcome. If you have a good idea that's in the scope of the Gogrow project, please open a pull request or jump into a discussion with us. We'd love your feedback on how Gogrow can be even more useful and functional!</p>
+            <p>As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can:</p>
+            <ul class="aboutme-list">
+                <li>
+                    <a href="https://www.patreon.com/user?u=94595844">Donate to my coffee fund on Patreon</a>
+                </li>
+            </ul>
+            <p>Any support is greatly appreciated and will be used to continue development and maintain this project and <a href="https://gogrow.io">my blog!</a></p>
+        </article>
+
+    </div>
+</section>
+<script>
+
+    function initializeAboutPage() {
+        (async function () {
+            // Apply the saved theme
+            const theme = await getSetting('Theme', 'mode');
+            console.log(`Applying theme: ${theme}`);
+            changeTheme(theme);
+        })();
+    }
+
+    async function getSetting(section, key) {
+        const response = await fetch(`/settings/get?section=${section}&key=${key}`);
+        if (response.ok) {
+            const data = await response.json();
+            return data.value;
+        } else {
+            console.error("Error getting setting:", response.statusText);
+            return null;
+        }
+    }
+
+    let customTheme = null;
+
+    async function fetchCustomTheme() {
+        try {
+            // If we already fetched the theme, return early
+            if (customTheme !== null) return;
+
+            const response = await fetch('/custom_theme');
+            if (!response.ok) throw new Error(response.statusText);
+
+            const cssVariables = await response.text();
+
+            // Create a style element to inject the CSS variables into the document
+            const style = document.createElement('style');
+            style.textContent = `:root { ${cssVariables} }`;
+
+            // Append the style element to the document head
+            document.head.appendChild(style);
+
+            // Store the style element so we can re-use it later
+            customTheme = style;
+        } catch (error) {
+            console.error('Error fetching custom theme:', error);
+        }
+    }
+
+    function changeTheme(theme) {
+        console.log(`Changing theme to: ${theme}`);
+        let themes = ['light', 'dark', 'beach', 'forest', 'sunset', 'amethyst', 'custom'];
+        themes.forEach((t) => {
+            document.body.classList.remove(`${t}-mode`);
+        });
+        document.body.classList.add(`${theme}-mode`);
+
+        // Remove the custom theme if it was applied
+        if (customTheme !== null && document.head.contains(customTheme)) {
+            document.head.removeChild(customTheme);
+        }
+
+        // Fetch the custom theme if the user selected the custom theme
+        if (theme === 'custom') {
+            fetchCustomTheme();
+        }
+    }
+    initializeAboutPage();
+    changeTheme();
+</script>
+{% endblock %}

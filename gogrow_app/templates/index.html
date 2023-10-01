@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="sidebar">
+        <h3 id="selected-folder-name">Selected Folder: None</h3>
+        <div class="upload-container">
+            <form id="upload-form" method="post" enctype="multipart/form-data">
+                <label class="choose-image-text" for="image" title="PNG or JPG supported">Upload an image below</label>
+                <input class="choosefile-btn" type="file" id="image" name="image" aria-describedby="image-help">
+                <input class="submit-btn" type="submit" value="UPLOAD IMAGE">
+            </form>
+        </div>
+        <div id="line-icon-mode-toggle">
+            <button id="toggle-add-mode">Switch to Line Mode</button>
+            <button id="toggle-markers-btn" class="toggle-button" data-visible="true">Hide Markers</button>
+            <button id="toggle-lines-btn" class="toggle-button" data-visible="true">Hide Lines</button>
+            <button id="hide-sidebar-btn">Hide This Sidebar</button>
+        </div>
+        <div class="sidebar-toggler">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div id="sidebar-master-container">
+            <div id="folder-list-container">
+                <h4>IMAGE FOLDERS</h4>
+                <h6>Click on a folder below to load it</h6>
+                <div class="folder-scroll-container">
+                    <ul id="folder-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="map-markers-view-container">
+        <div class="map-container">
+            <div id="map" src="{{ image_url }}" alt="image/map"></div>
+        </div>
+        <div id="marker-list-container">
+            <h3>Markers</h3>
+            <table id="marker-list" class="table table-striped">
+                <thead>
+                    <tr id="marker-list-header">
+                        <th>ID#</th>
+                        <th>Description</th>
+                        <th>Icon</th>
+                        <th>Color</th>
+                        <th>Notes</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="marker-list-body"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/static/scripts/gogrow.js"></script>
+{% endblock %}
+

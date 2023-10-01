@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <link href="/static/content/quill.snow.css" rel="stylesheet">
+    <link href="/static/content/quill.imageUploader.css" rel="stylesheet">
+    <script src="/static/scripts/quill.js"></script>
+    <script src="/static/scripts/quill.imageUploader.min.js"></script>
+    <script src="/static/scripts/journal.js"></script>
+</head>
+
+<aside class="journal-sidebar">
+    <label for="image-directory">Select a journal:</label>
+    <select id="image-directory">
+        <!-- The options will be populated dynamically -->
+    </select>
+    <div id="thumb-csv-container">
+        <div id="thumbnail-container"></div>
+        <button id="export-csv">Export as CSV</button>
+    </div>
+    <input type="hidden" id="journal-id">
+    <div class="journal-search-container">
+        <input type="text" id="journal-search-input" placeholder="Search journals..." />
+        <button id="toggle-search-content">Searching Titles</button>
+        <label id="toggle-label" for="toggle-search-content">Change search content by clicking button above</label>
+    </div>
+    <div class="journal-entries">
+        <h3>Journal Entries</h3>
+        <ul id="journal-entry-list">
+            <!-- The list items will be populated dynamically -->
+        </ul>
+    </div>
+</aside>
+
+<section class="journal">
+    <div class="journal-main">
+        <h3 id="header-text-journal">GoGrow Journal</h3>
+        <div id="header-container">
+            <input type="text" id="journal-title" placeholder="Enter journal title...">
+            <div id="favorite-container">
+                <input type="checkbox" id="is-favorite" />
+                <label id="favorite-checkbox-label" for="is-favorite">Star</label>
+            </div>
+        </div>
+        <!-- The journal entry form or display goes here -->
+        <div id="editor" style="height: 200px;"></div>
+        <!-- Dropdown for linking existing markers or lines -->
+        <label for="linked-item">Link a marker or line to this journal entry:</label>
+        <select id="linked-item" placeholder="Link a marker or line...">
+            <option value="">None</option>
+            <!-- Other options will be added dynamically -->
+        </select>
+        <table id="linked-items-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>ID</th>
+                    <th>Info</th>
+                    <th>Notes</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="linked-items-container">
+                <!-- Table rows will be inserted here -->
+            </tbody>
+        </table>
+        <div id="submit-cancel-container">
+            <!-- Submit button for adding a new journal entry -->
+            <button id="submit-journal">Submit New Journal</button>
+            <button id="cancel-journal">Cancel</button>
+            <button id="delete-journal">Delete Journal</button>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

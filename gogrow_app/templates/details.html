@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="/static/content/themes.css">
+</head>
+
+<body class="body-content">
+    <div id="details-marker-details-master-container">
+        <h3 class="centered-title">Edit and Notate Markers</h3>
+        <h6 class="centered-subtext">Select an image folder to load from the dropdown below</h6>
+        <div class="top-controls">
+            <div class="dropdown-container">
+                <select id="folder-selector">
+                    {% for db in marker_dbs %}
+                    <option value="{{ db.id }}">{{ db.name }}</option>
+                    {% endfor %}
+                </select>
+                <button id="export-button">Export info as CSV</button>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search descriptions..." />
+            </div>
+        </div>
+        <!-- table to display the markers -->
+        <div class="table-responsive">
+            <h6 class="centered-title-sub">Click or tap on an object below to edit, or on one of the table headers to sort</h6>
+            <div id="details-marker-list-container">
+                <table id="details-marker-table" class="table-striped">
+                    <thead>
+                        <tr id="details-marker-table-head">
+                            <th class="header-cell id-cell">Marker ID#</th>
+                            <th class="header-cell icon-cell sortable">Icon</th>
+                            <th class="header-cell desc-cell sortable">Description</th>
+                            <th class="header-cell notes-column sortable">Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="details-marker-table-body">
+                        <!-- dynamically add rows -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- modal for editing the marker info -->
+        <div id="edit-marker-modal" class="dark-modal">
+            <h2>Edit Marker</h2>
+            <label for="edit-marker-description">Description:</label>
+            <input id="edit-marker-description" type="text">
+            <label for="edit-marker-notes">Notes:</label>
+            <textarea id="edit-marker-notes"></textarea>
+            <label for="edit-marker-icon-color">Color:</label>
+            <input id="edit-marker-icon-color" type="color">
+            <label for="edit-marker-icon-type">Icon:</label>
+            <select id="edit-marker-icon-type"></select>
+            <button id="edit-marker-submit">Save Changes</button>
+            <button id="edit-marker-cancel">Cancel</button>
+        </div>
+    </div>
+        <script src="/static/scripts/details.js"></script>
+</body>
+
+{% endblock %}

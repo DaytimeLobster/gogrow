@@ -1,0 +1,9 @@
+    version: '3'
+    services:
+      gogrow:
+        build: .
+        ports:
+          - "5555:5555"
+        volumes:
+          - ./img:/app/gogrow_app/img
+          - ./backups:/app/gogrow_app/backups

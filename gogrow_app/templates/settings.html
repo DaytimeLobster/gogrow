@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="settings-body">
+    <div id="flash-message-container"><h3>{{ title }}</h3></div>
+    <div class="setting-container">
+        <label for="map-background-select">Map background:</label>
+        <select id="map-background-select">
+            <option value="">Select a texture</option>
+        </select>
+        <button id="update-background-btn">Update Background</button>
+    </div>
+
+    <div class="setting-container">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+            <option value="beach">Beach</option>
+            <option value="forest">Forest</option>
+            <option value="sunset">Sunset</option>
+            <option value="amethyst">Amethyst</option>
+            <option value="custom">Custom</option>
+        </select>
+        <button id="update-theme-btn">Save Theme</button>
+    </div>
+
+    <div class="setting-container">
+        <label for="directory-select">Select directory to backup:</label>
+        <select id="directory-select">
+            <option value="">Select a directory</option>
+        </select>
+        <button id="backup-btn">Back Up</button>
+    </div>
+
+    <div class="setting-container">
+        <label for="backup-select">Select a backup to restore:</label>
+        <select id="backup-select">
+            <option value="">Select a backup</option>
+        </select>
+        <button id="restore-btn">Restore</button>
+    </div>
+</div>
+<script src="/static/scripts/settings.js"></script>
+{% endblock %}

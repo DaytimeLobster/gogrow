@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} GoGrow</title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="/static/content/leaflet.css" />
+    <script src="/static/scripts/leaflet.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="/static/content/themes.css">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="alert alert-{{ messages[0][0] }}">
+                {{ messages[0][1] }}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <div class="navbar-header">
+                <div class="navbar-brand-version">
+                    <a href="/" class="navbar-brand">
+                        <span>GoGrow</span><span id="version"></span>
+                        <span class="navbar-tagline d-none d-md-inline-block"></span>
+                    </a>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="Toggle Navigation Menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('details') }}">Details</a></li>
+                    <li><a href="{{ url_for('journal') }}">Journal</a></li>
+                    <li><a href="{{ url_for('settings') }}">Settings</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    {% if request.endpoint == 'index' %}
+                    <li class="nav-sidebar-toggler"><a href="#"><i class="fas fa-bars"></i> Toggle Sidebar</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <script>
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '/version', true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        document.getElementById('version').textContent = 'V' + xhr.responseText;
+                    }
+                };
+                xhr.send(null);
+            </script>
+        </div>
+    </div>
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
