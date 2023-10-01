@@ -1,6 +1,6 @@
 # GoGrow: Your Homestead Management and Image Annotation Tool
 
-GoGrow is a Flask application written in HTML, CSS, JS, and Python 3.11. It's designed to assist gardeners, farmers, project managers, drone operators, preppers, planners, or anyone in need of an efficient mapping or image annotation tool to mark a place, feature, or thing.
+GoGrow is a Flask application written in HTML, CSS, JS, and Python. It's designed to assist gardeners, farmers, project managers, drone operators, preppers, planners, or anyone in need of an efficient mapping or image annotation tool to mark a place, feature, or thing.
 
 ## Purpose of GoGrow
 GoGrow is an open-source application that provides a thoughtful UI to annotate, mark, and keep track of images or projects. It empowers users to plan and track their changes to projects, whether on a large scale or on a more personal level. With modern access to high-resolution camera drones and satellite imagery, users can leverage a vast array of public and private imagery to upload and work with in GoGrow - from expansive territories, to personal homesteads, to backyard square-foot gardens. GoGrow prioritizes user privacy and data ownership, offering a user-friendly workflow for local annotation and collaboration on PNG and JPG images. Its versatility and modularity make it suitable for diverse industries and individuals seeking precise image annotation and marking. With GoGrow, you can seamlessly place and plan projects, structures, and associated information while enjoying a user-centric experience.
@@ -96,7 +96,7 @@ Ensure Docker and Docker Compose are installed and running correctly, and you ca
 4. In your terminal, type `docker-compose up -d` to build and run the GoGrow app as a Docker service.
 5. Navigate to the IP address and port you've set (default is localhost:5555), and enjoy the app!
 
-These Docker Compose commands spin up a new GoGrow service using Docker on port 5000 and makes the "backups" and "img" subdirectories easy to access. You may also decide to map the icons or textures folders if you wish to use your own icons and texture in Gogrow!
+These Docker Compose commands spin up a new GoGrow service using Docker on port 5000 and makes the "backups" and "img" subdirectories easy to access. You may also decide to map the icons or textures folders if you wish to use your own icons and textures in Gogrow!
 
 ### Install as flask web app:
 
@@ -158,6 +158,6 @@ Contributions, collaboration, pull requests - We welcome all of these. If you ha
 
 ## Support
 
-As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [Donate to my coffee fund on Patreon](https://www.patreon.com/daytimelobster)
+As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [donate to my coffee fund on Patreon](https://www.patreon.com/daytimelobster)
 
-Any support is greatly appreciated and will be used to continue development and maintain this project!
+Any support is greatly appreciated and will be used to help me continue development and maintain this project!
