@@ -178,6 +178,7 @@ To do list:
 - make it easier for people to add custom icons and textures to GoGrow
 - a feature to show/pick from most used icons when adding a new marker using the pop up modal
 - thoroughly fix/test DNG and RAW support
+- rewrite/swap SQLite based backend for a production-ready database (possibly MariaDB)
 
 ## Support
 
