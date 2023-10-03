@@ -179,6 +179,7 @@ To do list:
 - thoroughly fix/test DNG and RAW support
 - rewrite/swap SQLite based backend for a production-ready database (possibly MariaDB)
 - fix automatically generated timestamps for journals and backups (should accurately reflect system time)
+- provide Windows executable so people can simply download and run as a portable app with no installation, docker, or command line commands
 
 Possible features I might add at a later date:
 - Increased icon variety support (right now GoGrow only works well with SVG icons like the included Font Awesome free set)
