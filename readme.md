@@ -67,7 +67,7 @@ Please proceed with caution and make informed decisions when using the applicati
 
 
 ## GoGrow Copyright and Authorship
-copyright 2023 Firespawn Studios, LLC - Digital and Physical Arts Studio
+copyright 2023 [Firespawn Studios, LLC - Digital and Physical Arts Studio](https://firespawnstudios.net/)
 
 # Install & Getting Started
 
@@ -189,7 +189,7 @@ Possible features I might add at a later date:
   
 ## Support
 
-As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [donate to my coffee fund on Patreon](https://www.patreon.com/daytimelobster)
+As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [donate to my coffee fund on Patreon](https://www.patreon.com/daytimelobster). You can also check out my blog at [gogrow.io](https://gogrow.io/), where I share updates about the GoGrow app and write about various tech and homesteading topics.
 
 Any support is greatly appreciated and will be used to help me continue development and maintain this project!
 
