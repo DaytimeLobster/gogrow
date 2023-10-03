@@ -175,13 +175,20 @@ To do list:
 - general bug fixes
 - general UI/UX improvements
 - implement feedback gathered from users
-- make it easier for people to add custom icons and textures to GoGrow
 - a feature to show/pick from most used icons when adding a new marker using the pop up modal
 - thoroughly fix/test DNG and RAW support
 - rewrite/swap SQLite based backend for a production-ready database (possibly MariaDB)
 
+Possible features I might add at a later date:
+- Increased icon variety support (right now GoGrow only works well with SVG icons like the included Font Awesome free set)
+- Ability to set the size of, and resize icons
+- Make it easier for people to add custom icons and textures to GoGrow (an import icon or texture button in settings?)
+- Other things I haven't thought of yet (I'm open for suggestions!)
+  
 ## Support
 
 As the sole developer on this project, I (DaytimeLobster) work on it in my spare time and fund all related expenses out of my own pocket. If you find this project useful and want to show appreciation, you can [donate to my coffee fund on Patreon](https://www.patreon.com/daytimelobster)
 
 Any support is greatly appreciated and will be used to help me continue development and maintain this project!
+
+Thanks for checking this project out - please give the project a star if you like it, and check back for updates!
