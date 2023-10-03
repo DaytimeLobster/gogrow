@@ -51,23 +51,6 @@ We strongly advise against using the application for any harmful or malicious ac
 
 Please proceed with caution and make informed decisions when using the application.
 
-## Attributions
-
-#### GoGrow acknowledges the invaluable contributions of the following projects and their maintainers:
-
-### Leaflet.js
-#### Leaflet.js, an incredible open-source JavaScript library for interactive maps. You can find the Leaflet.js repository at https://github.com/Leaflet/Leaflet. Please review the Leaflet.js license for licensing details.
-
-### Font Awesome
-#### Font Awesome for its wonderful icons. The free version of Font Awesome (Version 6.4.0) utilized in GoGrow (as of GoGrow version 0.4.4) is under an open-source license. More information can be found at https://fontawesome.com/ and their repository on GitHub: https://github.com/FortAwesome/Font-Awesome. Please review the Font Awesome license for licensing details.
-
-### Quill
-#### - Powerful and open source rich text editor. It enables the rich text formatting on the GoGrow journal, and it is a superb and lightweight project for this kind of use-case and I highly recommend it! More information can be found at https://quilljs.com/ and their repository on GitHub: https://github.com/quilljs/quill
-#### - Also a huge thank you to the creator of the Quill image uploader module that made my life a bit easier making GoGrow. The github repo for that project is at: https://github.com/NoelOConnell/quill-image-uploader and the MIT license is included in the app's file directory "/static/scripts/QuillImageUploaderLicense.txt" along with the embedded files
-
-
-## GoGrow Copyright and Authorship
-copyright 2023 [Firespawn Studios, LLC - Digital and Physical Arts Studio](https://firespawnstudios.net/)
 
 # Install & Getting Started
 
@@ -194,3 +177,22 @@ As the sole developer on this project, I (DaytimeLobster) work on it in my spare
 Any support is greatly appreciated and will be used to help me continue development and maintain this project!
 
 Thanks for checking this project out - please give the project a star if you like it, and check back for updates!
+
+
+## Acknowledgements & Attributions
+
+#### GoGrow acknowledges the invaluable contributions of the following projects and their maintainers:
+
+### Leaflet.js
+#### Leaflet.js, an incredible open-source JavaScript library for interactive maps. You can find the Leaflet.js repository at https://github.com/Leaflet/Leaflet. Please review the Leaflet.js license for licensing details.
+
+### Font Awesome
+#### Font Awesome for its wonderful icons. The free version of Font Awesome (Version 6.4.0) utilized in GoGrow (as of GoGrow version 0.4.4) is under an open-source license. More information can be found at https://fontawesome.com/ and their repository on GitHub: https://github.com/FortAwesome/Font-Awesome. Please review the Font Awesome license for licensing details.
+
+### Quill
+#### - Powerful and open source rich text editor. It enables the rich text formatting on the GoGrow journal, and it is a superb and lightweight project for this kind of use-case and I highly recommend it! More information can be found at https://quilljs.com/ and their repository on GitHub: https://github.com/quilljs/quill
+#### - Also a huge thank you to the creator of the Quill image uploader module that made my life a bit easier making GoGrow. The github repo for that project is at: https://github.com/NoelOConnell/quill-image-uploader and the MIT license is included in the app's file directory "/static/scripts/QuillImageUploaderLicense.txt" along with the embedded files
+
+
+## The GoGrow App Copyright and Authorship
+copyright 2023 [Firespawn Studios, LLC - Digital and Physical Arts Studio](https://firespawnstudios.net/)
