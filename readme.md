@@ -178,6 +178,7 @@ To do list:
 - a feature to show/pick from most used icons when adding a new marker using the pop up modal
 - thoroughly fix/test DNG and RAW support
 - rewrite/swap SQLite based backend for a production-ready database (possibly MariaDB)
+- fix automatically generated timestamps for journals and backups (should accurately reflect system time)
 
 Possible features I might add at a later date:
 - Increased icon variety support (right now GoGrow only works well with SVG icons like the included Font Awesome free set)
