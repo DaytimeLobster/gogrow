@@ -160,7 +160,7 @@ To do list:
 - implement feedback gathered from users
 - a feature to show/pick from most used icons when adding a new marker using the pop up modal
 - thoroughly fix/test DNG and RAW support
-- rewrite/swap SQLite based backend for a production-ready database (possibly MariaDB)
+- rewrite/swap SQLite based backend for mariaDB (also separate the marker/lines database from the journal database to allow for better performance) This may break compatibility with previous databases, etc. so I am carefully considering this
 - fix automatically generated timestamps for journals and backups (should accurately reflect system time)
 - provide Windows executable so people can simply download and run as a portable app with no installation, docker, or command line commands
 
