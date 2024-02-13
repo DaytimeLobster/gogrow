@@ -117,9 +117,19 @@ map = L.map('map', {
     minZoom: -3
 });
 
+// Initialize leaflet-easyPrint
+L.easyPrint({
+    title: 'Print map',
+    position: 'topright',
+    sizeModes: ['Current', 'A4Landscape', 'A4Portrait'],
+    filename: 'myGogrowMap',
+    exportOnly: true
+}).addTo(map);
+
 // Listen for the end of any movement or zoom events and re-calculate the size of the map
 map.on('moveend zoomend', function () {
     map.invalidateSize();
+    console.log('Map size recalculated after movement or zoom');
 });
 
 // Function to add an image overlay to the map

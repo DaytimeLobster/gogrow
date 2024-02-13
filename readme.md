@@ -184,7 +184,7 @@ Thanks for checking this project out - please give the project a star if you lik
 #### GoGrow acknowledges the invaluable contributions of the following projects and their maintainers:
 
 ### Leaflet.js
-#### Leaflet.js, an incredible open-source JavaScript library for interactive maps. You can find the Leaflet.js repository at https://github.com/Leaflet/Leaflet. Please review the Leaflet.js license for licensing details.
+#### Leaflet.js, an incredible open-source JavaScript library for interactive maps. You can find the Leaflet.js repository at https://github.com/Leaflet/Leaflet. Please review the Leaflet.js license for licensing details. Also thanks to leaflet-easyPrint plugin creator for a nice way to print/screenshot the leaflet container.
 
 ### Font Awesome
 #### Font Awesome for its wonderful icons. The free version of Font Awesome (Version 6.4.0) utilized in GoGrow (as of GoGrow version 0.4.4) is under an open-source license. More information can be found at https://fontawesome.com/ and their repository on GitHub: https://github.com/FortAwesome/Font-Awesome. Please review the Font Awesome license for licensing details.
