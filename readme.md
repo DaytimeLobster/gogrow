@@ -1,6 +1,6 @@
 # GoGrow: Your Homestead Management and Image Annotation Tool
 
-> **Maintenance Mode** — As of March 2026, this repository is in maintenance mode. Dependencies have been updated and most security issues addressed. No new features will be added to this version. See below for what's next.
+> **Maintenance Mode** - As of March 2026, this repository is in maintenance mode. Dependencies have been updated and most security issues addressed. No new features will be added to this version. See below for what's next.
 
 ---
 
@@ -10,9 +10,14 @@ I'm working on a full rewrite of this project under my software studio, **Firesp
 
 In the meantime, this version of GoGrow should remain fully functional. The codebase has been updated to current dependency versions as of March 2026.
 
+If you like GoGrow or want to support some of my other projects, please check us out on the web:
 **[Firespawn Studios](https://firespawnstudios.net/)**
-**[Firespawn Studios GitHub](https://github.com/Firespawn-Studios)**
+
+and on our github: **[Firespawn Studios GitHub](https://github.com/Firespawn-Studios)**
+
 ---
+
+## The GoGrow Project
 
 GoGrow is a Flask application written in HTML, CSS, JS, and Python. It's designed to assist gardeners, farmers, project managers, drone operators, preppers, planners, or really almost anyone in need of an efficient mapping or image annotation tool to mark a place, feature, or thing.
 
