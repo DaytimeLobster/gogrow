@@ -7,3 +7,6 @@
 /gogrow_debug.log
 /gogrow_app/img/
 /gogrow_app/backups
+
+# VS Code workspace settings
+.vscode/

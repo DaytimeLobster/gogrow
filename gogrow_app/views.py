@@ -38,8 +38,7 @@ def health_check():
         # If everything is okay, return a successful response
         return jsonify({"status": "healthy"}), 200
     except Exception as e:
-        # Print the error and return an error response
-        print(f"Health check failed: {e}")
+        app.logger.error(f"Health check failed: {e}")
         return jsonify({"status": "unhealthy", "error": str(e)}), 500
 
 @app.route('/details')
@@ -143,7 +142,7 @@ def update_settings():
     section = request.form.get('section')
     key = request.form.get('key')
     value = request.form.get('value')
-    print('Updating setting:', section, key, value)
+    app.logger.debug(f'Updating setting: {section} {key} {value}')
     update_setting(section, key, value)
     return jsonify(success=True)
 
@@ -176,7 +175,7 @@ def get_custom_theme():
         css_variables = []
         for key, value in custom_theme.items():
             if not is_valid_color(value):
-                print(f"Invalid value for {key}: {value}")
+                app.logger.warning(f"Invalid custom theme value for {key}: {value}")
                 continue
             css_variables.append(f"--{key}: {value};")
 
@@ -193,7 +192,7 @@ def get_textures():
 def get_image_folder_path():
     folder_name = session.get('image_folder')
     if folder_name is None:
-        print("Getting image folder path from settings.py")
+        app.logger.debug("Getting image folder path from settings.py")
         folder_name = IMAGE_FOLDER
     return folder_name
 
@@ -239,9 +238,9 @@ def init_markers_db(db_path):
             c.execute('''CREATE TABLE IF NOT EXISTS markers
                          (id TEXT PRIMARY KEY, lat REAL, lng REAL, info TEXT, iconType TEXT, iconColor TEXT, markerNotes TEXT)''')
             conn.commit()
-            print(f"init_markers_db() will attempt to create a 'markers' table in the database, if the table does not exist : {db_path}")
+            app.logger.debug(f"init_markers_db: created 'markers' table if not exists in {db_path}")
     except Exception as e:
-        print(f"Error initializing markers database: {e}")
+        app.logger.error(f"Error initializing markers database: {e}")
     finally:
         if conn:
             conn.close()
@@ -258,10 +257,10 @@ def init_lines_db(db_path):
         ''')
 
         conn.commit()
-        print(f"init_lines_db() will attempt to create a 'lines' table in the database, if the table does not exist : {db_path}")
+        app.logger.debug(f"init_lines_db: created 'lines' table if not exists in {db_path}")
 
     except Exception as e:
-        print(f"Error initializing lines database: {e}")
+        app.logger.error(f"Error initializing lines database: {e}")
     finally:
         if conn:
             conn.close()
@@ -307,7 +306,7 @@ def lines(selected_dir=None):
 
             return jsonify({'line_id': line_id}), 200
     except Exception as e:
-            print(f"Error adding line: {e}")
+            app.logger.error(f"Error adding line: {e}")
             return "", 500
     finally:
         if conn:
@@ -329,10 +328,10 @@ def update_line():
         c = conn.cursor()
         c.execute('UPDATE lines SET info=?, color=?, notes=? WHERE id=?', (info, color, notes, line_id))
         conn.commit()
-        print(f"Line(s) Updated")
+        app.logger.debug("Line(s) updated")
         return 'OK', 200
     except Exception as e:
-        print(f"Error updating line: {e}")
+        app.logger.error(f"Error updating line: {e}")
         return "", 500
     finally:
         if conn:
@@ -386,18 +385,18 @@ def delete_line():
         line_id = data['id']
         image_folder = session.get('image_folder', get_image_folder_path())
         db_path = os.path.join(app.root_path, 'img', image_folder, f'{image_folder}.db')
-        print(f"Deleting line from DB: {db_path}")
+        app.logger.debug(f"Deleting line from DB: {db_path}")
 
         conn = sqlite3.connect(db_path)
         c = conn.cursor()
         c.execute('DELETE FROM lines WHERE id=?', (line_id,))
         conn.commit()
 
-        print(f"Line {line_id} deleted")
+        app.logger.debug(f"Line {line_id} deleted")
         return 'OK', 200
 
     except Exception as e:
-        print(f"Error deleting line: {e}")
+        app.logger.error(f"Error deleting line: {e}")
         return "", 500
     finally:
         if conn:
@@ -416,26 +415,26 @@ def icon_filenames():
 def get_image_url(selected_dir=None):
     try:
         image_directory = os.path.join(os.path.dirname(__file__), "img")
-        print(f"Image directory: {image_directory}")
+        app.logger.debug(f"Image directory: {image_directory}")
         image_dirs = os.listdir(image_directory)
-        print(f"Image subdirectories: {image_dirs}")
+        app.logger.debug(f"Image subdirectories: {image_dirs}")
 
         if selected_dir in image_dirs:
             # Get the most recent image in the directory based on its creation time
             image_files = glob.glob(os.path.join(image_directory, selected_dir, "*"))
-            print(f"Files in image directory: {image_files}")
+            app.logger.debug(f"Files in image directory: {image_files}")
 
             # Filter out any database file, thumbnail and subdirectories in the directory
             image_files = [file for file in image_files if os.path.isfile(file) and not file.endswith(".db") and 'thumbnail-' not in file]
 
             latest_image = max(image_files, key=os.path.getctime)
-            print(f"Latest image: {os.path.relpath(latest_image, os.path.dirname(__file__))}")
+            app.logger.debug(f"Latest image: {os.path.relpath(latest_image, os.path.dirname(__file__))}")
             return os.path.relpath(latest_image, os.path.dirname(__file__)), 200
         else:
             return "", 404
 
     except Exception as e:
-        print(f"Error getting image URL: {e}")
+        app.logger.error(f"Error getting image URL: {e}")
         return "", 500
 
 
@@ -483,8 +482,8 @@ def markers(selected_dir=None):
     image_base_path = os.path.join(app.root_path, 'img')
     
     if selected_dir is not None:
-        print(f"selected_dir: {selected_dir}")
-        print(f"resolved selected_dir: {os.path.realpath(os.path.join(image_base_path, selected_dir))}")
+        app.logger.debug(f"markers selected_dir: {selected_dir}")
+        app.logger.debug(f"markers resolved path: {os.path.realpath(os.path.join(image_base_path, selected_dir))}")
         if not is_safe_path(image_base_path, selected_dir):
             raise InvalidDirectoryError("Invalid directory")    
         conn = None
@@ -499,7 +498,7 @@ def markers(selected_dir=None):
             # Call init_markers_db before adding a new marker
             image_folder = session.get('image_folder', get_image_folder_path())
             db_path = os.path.join(app.root_path, 'img', image_folder, f'{image_folder}.db')
-            print(f"initializing database {image_folder}")
+            app.logger.debug(f"initializing database {image_folder}")
             init_markers_db(db_path)
 
             data = request.get_json()
@@ -521,7 +520,7 @@ def markers(selected_dir=None):
             return jsonify({'marker_id': marker_id}), 200
 
     except Exception as e:
-            print(f"Error adding marker: {e}")
+            app.logger.error(f"Error adding marker: {e}")
             return "", 500
     finally:
         if conn:
@@ -552,11 +551,11 @@ def update_marker():
         c.execute('UPDATE markers SET info=?, iconType=?, iconColor=?, markerNotes=? WHERE id=?', (info, icon_type, icon_color, marker_notes, marker_id))
         conn.commit()
 
-        print(f"Marker(s) Updated")
+        app.logger.debug("Marker(s) updated")
         return 'OK', 200
 
     except Exception as e:
-        print(f"Error updating marker: {e}")
+        app.logger.error(f"Error updating marker: {e}")
         return "An internal server error occurred", 500
     finally:
         if conn:
@@ -570,18 +569,18 @@ def delete_marker():
         marker_id = data['id']
         image_folder = session.get('image_folder', get_image_folder_path())
         db_path = os.path.join(app.root_path, 'img', image_folder, f'{image_folder}.db')
-        print(f"Deleting marker from DB: {db_path}")
+        app.logger.debug(f"Deleting marker from DB: {db_path}")
 
         conn = sqlite3.connect(db_path)
         c = conn.cursor()
         c.execute('DELETE FROM markers WHERE id=?', (marker_id,))
         conn.commit()
 
-        print(f"Marker {marker_id} deleted")
+        app.logger.debug(f"Marker {marker_id} deleted")
         return 'OK', 200
 
     except Exception as e:
-        print(f"Error deleting marker: {e}")
+        app.logger.error(f"Error deleting marker: {e}")
         return "", 500
     finally:
         if conn:
@@ -672,18 +671,18 @@ def index():
     image_directory = os.path.join(app.root_path, 'img')
     if not os.path.exists(image_directory):
         os.makedirs(image_directory)
-        print("Base image directory not detected - creating /img directory")
+        app.logger.info("Base image directory not detected - creating /img directory")
 
     # Create the backups directory if it doesn't exist
     backup_directory = os.path.join(app.root_path, 'backups')
     if not os.path.exists(backup_directory):
         os.makedirs(backup_directory)
-        print("Backups directory not detected - creating /backups directory")
+        app.logger.info("Backups directory not detected - creating /backups directory")
 
     # Initialize image_url with the result of the get_image_url() function
     selected_dir = session.get('image_folder', '')
     image_url = get_image_url(selected_dir)[0] if selected_dir else None
-    print(f"Index() initializing: getting image url : {image_url}")
+    app.logger.debug(f"Index() initializing: getting image url : {image_url}")
 
     icon_files = get_icon_files()
 
@@ -711,7 +710,7 @@ def index():
     except Exception as e:
         # Log the error and show a flash message
         app.logger.error(f'Error rendering template: {e}')
-        print("Index() function error")
+        app.logger.debug("Index() function error")
         flash('An error occurred while rendering the template. Please try again.', 'danger')
         return render_template('index.html', image_url=image_url, icon_files=icon_files, markers=markers)
 
@@ -750,21 +749,21 @@ def create_directories_if_needed(image_directory, filename):
     file_directory = os.path.join(image_directory, os.path.splitext(filename)[0])
     if not os.path.exists(file_directory):
         os.makedirs(file_directory)
-        print("New file directory created")
+        app.logger.info("New file directory created")
     return file_directory
 
 def save_image_and_thumbnail(image, file_directory, filename):
     image.save(os.path.join(file_directory, filename))
     thumbnail_filename = f"thumbnail-{os.path.splitext(filename)[0]}.png"
     create_thumbnail(os.path.join(file_directory, filename), os.path.join(file_directory, thumbnail_filename), (200, 200))
-    print("New thumbnail image saved")
+    app.logger.debug("New thumbnail image saved")
 
 def update_session_variables(filename, file_directory):
     image_url = f'/img/{os.path.splitext(filename)[0]}/{filename}'
     session['uploaded_image_url'] = image_url
     session['uploaded_image_folder'] = os.path.splitext(filename)[0]
     session['uploaded_image_filename'] = os.path.splitext(filename)[0]
-    print("Setting image URL, image_folder, and image_filename to this session")
+    app.logger.debug("Setting image URL, image_folder, and image_filename to this session")
     session['image_folder'] = session.get('uploaded_image_folder')
 
 def create_thumbnail(input_path, output_path, size):
@@ -795,7 +794,7 @@ def serve_image(filename):
     except Exception as e:
         # Log the error and show a flash message
         app.logger.error(f'Error serving image: {e}')
-        print(f"An error occured while serving image")
+        app.logger.debug("An error occurred while serving image")
         flash('An error occurred while serving the image. Please try again.', 'danger')
         return redirect(url_for('index'))
 
@@ -812,7 +811,7 @@ def image_folders():
 def serve_icon(icon_name):
     try:
         icon_path = os.path.join(ICON_DIR, icon_name)
-        print(f"Serving icon: {icon_name} at {icon_path} ")
+        app.logger.debug(f"Serving icon: {icon_name} at {icon_path}")
         return send_file(icon_path, mimetype='image/svg+xml')
     except FileNotFoundError:
         return render_template('error.html', error='File not found'), 404
@@ -946,7 +945,7 @@ def backup():
         return {'status': 'success', 'filename': backup_filename}, 200
 
     except Exception as e:
-        print(f"Error creating backup: {e}")
+        app.logger.error(f"Error creating backup: {e}")
         return {'status': 'error', 'message': str(e)}, 500
 
 @app.route('/restore', methods=['POST'])
@@ -974,7 +973,7 @@ def restore():
         return {'status': 'success'}, 200
 
     except Exception as e:
-        print(f"Error restoring backup: {e}")
+        app.logger.error(f"Error restoring backup: {e}")
         return {'status': 'error', 'message': str(e)}, 500
 
 @app.route('/backups')
@@ -1008,10 +1007,10 @@ def init_journal_db(db_path):
         ''')
 
         conn.commit()
-        print(f"init_journal_db() will attempt to create a 'journals' table in the database, if the table does not exist : {db_path}")
+        app.logger.debug(f"init_journal_db: created 'journals' table if not exists in {db_path}")
 
     except Exception as e:
-        print(f"Error initializing journal database: {e}")
+        app.logger.error(f"Error initializing journal database: {e}")
     finally:
         if conn:
             conn.close()
@@ -1021,8 +1020,8 @@ def journals(selected_dir=None):
     image_base_path = os.path.join(app.root_path, 'img')
 
     if selected_dir is not None:
-        print(f"selected_dir: {selected_dir}")
-        print(f"resolved selected_dir: {os.path.realpath(os.path.join(image_base_path, selected_dir))}")
+        app.logger.debug(f"journals selected_dir: {selected_dir}")
+        app.logger.debug(f"journals resolved path: {os.path.realpath(os.path.join(image_base_path, selected_dir))}")
         if not is_safe_path(image_base_path, selected_dir):
             raise InvalidDirectoryError("Invalid directory")
 
@@ -1041,7 +1040,7 @@ def journals(selected_dir=None):
             # Call init_journal_db before adding a new journal entry
             image_folder = session.get('image_folder', get_image_folder_path())
             db_path = os.path.join(app.root_path, 'img', image_folder, f'{image_folder}.db')
-            print(f"initializing database {image_folder}")
+            app.logger.debug(f"initializing database {image_folder}")
             init_journal_db(db_path)
 
             data = request.get_json()
@@ -1064,7 +1063,7 @@ def journals(selected_dir=None):
             return jsonify({'journal_id': journal_id}), 200
 
     except Exception as e:
-        print(f"Error adding journal: {e}")
+        app.logger.error(f"Error adding journal: {e}")
         return "", 500
     finally:
         if conn:
@@ -1125,11 +1124,11 @@ def journal_entry(folder, id):
             c.execute('UPDATE journals SET entry_title=?, entry_content=?, linked_item_id=?, is_favorite=? WHERE id=?', (entry_title, entry_content, linked_item_id, is_favorite, id))
             conn.commit()
 
-            print(f"Journal Updated")
+            app.logger.debug("Journal updated")
             return 'OK', 200
 
         except Exception as e:
-            print(f"Error updating journal: {e}")
+            app.logger.error(f"Error updating journal: {e}")
             return "Internal Server Error", 500
 
         finally:
@@ -1192,11 +1191,11 @@ def update_journal():
         c.execute('UPDATE journals SET entry_title=?, entry_content=?, linked_item_id=?, is_favorite=? WHERE id=?', (entry_title, entry_content, linked_item_id, is_favorite, journal_id))
         conn.commit()
 
-        print(f"Journal Updated")
+        app.logger.debug("Journal updated")
         return 'OK', 200
 
     except Exception as e:
-        print(f"Error updating journal: {e}")
+        app.logger.error(f"Error updating journal: {e}")
         return "Internal Server Error", 500
     finally:
         if conn:
@@ -1216,11 +1215,11 @@ def delete_journal():
         c.execute('DELETE FROM journals WHERE id=?', (journal_id,))
         conn.commit()
 
-        print(f"Journal {journal_id} deleted")
+        app.logger.debug(f"Journal {journal_id} deleted")
         return 'OK', 200
 
     except Exception as e:
-        print(f"Error deleting journal: {e}")
+        app.logger.error(f"Error deleting journal: {e}")
         return "Internal Server Error", 500
     finally:
         if conn:
@@ -1232,7 +1231,7 @@ def save_dng_raw_image_as_jpeg(image, file_directory, filename):
     imageio.imsave(os.path.join(file_directory, filename), rgb)
     thumbnail_filename = f"thumbnail-{os.path.splitext(filename)[0]}.png"
     create_thumbnail(os.path.join(file_directory, filename), os.path.join(file_directory, thumbnail_filename), (200, 200))
-    print("New .dng or .raw image saved as .jpg and thumbnail image saved")
+    app.logger.debug("New .dng or .raw image saved as .jpg and thumbnail image saved")
 
 @app.route('/upload_image', methods=['POST'])
 def upload_image():

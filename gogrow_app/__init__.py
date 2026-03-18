@@ -3,13 +3,24 @@ The flask application package.
 """
 
 import os
+import logging
 from flask import Flask, redirect, jsonify, request, url_for, render_template, send_from_directory
-app = Flask(__name__)
-app.debug = True
+from flask_wtf.csrf import CSRFProtect
 
-versionNum = "1.0.0"
+app = Flask(__name__)
+# debug must be False in production; controlled via environment variable only
+app.debug = os.environ.get('FLASK_DEBUG', 'false').lower() == 'true'
+
+versionNum = "1.0.2"
 
 app.config['STATIC_FOLDER'] = os.path.join(app.root_path, 'static')
+# WTF_CSRF_CHECK_DEFAULT=False lets us selectively protect only HTML form routes
+# while leaving JSON API endpoints unaffected
+app.config['WTF_CSRF_CHECK_DEFAULT'] = False
+
+csrf = CSRFProtect(app)
+
+logger = logging.getLogger(__name__)
 
 @app.route('/static/<path:path>')
 def serve_static(path):
@@ -23,9 +34,8 @@ def serve_static(path):
 def version():
     return f"{versionNum}"
 
-print("__init__.py serving /static folder")
-
-print(f"Running GoGrow version {versionNum}")
+logger.info("GoGrow static folder configured")
+logger.info(f"Running GoGrow version {versionNum}")
 
 
 import gogrow_app.views

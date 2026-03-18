@@ -1,52 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ title }} GoGrow</title>
-    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
-    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <link rel="stylesheet" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" href="/static/content/leaflet.css" />
-    <script src="/static/scripts/leaflet.js"></script>
-    <script src="static/scripts/bundle.js"></script>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="/static/content/themes.css">
+    <link rel="stylesheet" href="/static/content/site.css" />
+    <script src="/static/scripts/leaflet.js"></script>
+    <script src="/static/scripts/bundle.js"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark gogrow-navbar fixed-top">
+        <div class="container-fluid">
             {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-            <div class="alert alert-{{ messages[0][0] }}">
+            <div class="alert alert-{{ messages[0][0] }} w-100 mb-0 py-1" role="alert">
                 {{ messages[0][1] }}
             </div>
             {% endif %}
             {% endwith %}
-            <div class="navbar-header">
-                <div class="navbar-brand-version">
-                    <a href="/" class="navbar-brand">
-                        <span>GoGrow</span><span id="version"></span>
-                        <span class="navbar-tagline d-none d-md-inline-block"></span>
-                    </a>
-                </div>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="Toggle Navigation Menu">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+
+            <div class="navbar-brand-version">
+                <a href="/" class="navbar-brand">
+                    <span>GoGrow</span><span id="version"></span>
+                    <span class="navbar-tagline d-none d-md-inline-block"></span>
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('details') }}">Details</a></li>
-                    <li><a href="{{ url_for('journal') }}">Journal</a></li>
-                    <li><a href="{{ url_for('settings') }}">Settings</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                    aria-controls="navbarMain" aria-expanded="false"
+                    aria-label="Toggle Navigation Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('details') }}">Details</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('journal') }}">Journal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('settings') }}">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
                     {% if request.endpoint == 'index' %}
-                    <li class="nav-sidebar-toggler"><a href="#"><i class="fas fa-bars"></i> Toggle Sidebar</a></li>
+                    <li class="nav-item nav-sidebar-toggler">
+                        <a class="nav-link" href="#"><i class="fas fa-bars"></i> Toggle Sidebar</a>
+                    </li>
                     {% endif %}
                 </ul>
             </div>
+
             <script>
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', '/version', true);
@@ -58,14 +63,14 @@
                 xhr.send(null);
             </script>
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+
+    <div class="container-fluid body-content">
         {% block content %}{% endblock %}
     </div>
 
-    <script src="/static/scripts/jquery-1.10.2.js"></script>
-    <script src="/static/scripts/bootstrap.js"></script>
-    <script src="/static/scripts/respond.js"></script>
+    <!-- Bootstrap 5 bundle (includes Popper) — no jQuery required -->
+    <script src="/static/scripts/bootstrap.bundle.min.js"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

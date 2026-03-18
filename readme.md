@@ -1,6 +1,20 @@
 # GoGrow: Your Homestead Management and Image Annotation Tool
 
-GoGrow is a Flask application written in HTML, CSS, JS, and Python. It's designed to assist gardeners, farmers, project managers, drone operators, preppers, planners, or anyone in need of an efficient mapping or image annotation tool to mark a place, feature, or thing.
+> **Maintenance Mode** — As of March 2026, this repository is in maintenance mode. Dependencies have been updated and most security issues addressed. No new features will be added to this version. See below for what's next.
+
+---
+
+## What's Next: GoGrow Next
+
+I'm working on a full rewrite of this project under my software studio, **Firespawn Studios**. GoGrow Next is being built from the ground up with a modern stack, a cleaner UI, and features that weren't possible in this version. More details coming soon.
+
+In the meantime, this version of GoGrow should remain fully functional. The codebase has been updated to current dependency versions as of March 2026.
+
+**[Firespawn Studios](https://firespawnstudios.net/)**
+**[Firespawn Studios GitHub](https://github.com/Firespawn-Studios)**
+---
+
+GoGrow is a Flask application written in HTML, CSS, JS, and Python. It's designed to assist gardeners, farmers, project managers, drone operators, preppers, planners, or really almost anyone in need of an efficient mapping or image annotation tool to mark a place, feature, or thing.
 
 <p align="center"> <a href="http://www.youtube.com/watch?v=8lQdxjow-kI"> <img src="http://img.youtube.com/vi/8lQdxjow-kI/0.jpg" alt="GoGrow App Demo" width="50%" height="50%"> </a> </p>
 
@@ -87,7 +101,7 @@ These Docker Compose commands spin up a new GoGrow service using Docker on port 
 
 You may also choose to run GoGrow as a flask web app directly - you can follow the below instructions to accomplish this.
 
-1. Make sure you have Python 3.11 installed on your machine. If not, you can download it from the official Python website.
+1. Make sure you have Python 3.11 or newer installed on your machine. If not, you can download it from the official Python website.
 2. Clone the GoGrow repository or download the zip file from the repository.
 3. Navigate to the directory where you've saved GoGrow in your terminal.
 4. Run `pip install -r requirements.txt` to install the necessary dependencies.
@@ -183,16 +197,19 @@ Thanks for checking this project out - please give the project a star if you lik
 
 #### GoGrow acknowledges the invaluable contributions of the following projects and their maintainers:
 
+### Bootstrap
+#### Bootstrap 5 for the responsive UI framework. More information at https://getbootstrap.com/ and https://github.com/twbs/bootstrap
+
 ### Leaflet.js
-#### Leaflet.js, an incredible open-source JavaScript library for interactive maps. You can find the Leaflet.js repository at https://github.com/Leaflet/Leaflet. Please review the Leaflet.js license for licensing details. Also thanks to leaflet-easyPrint plugin creator for a nice way to print/screenshot the leaflet container.
+#### Leaflet.js, an open-source JavaScript library for interactive maps. You can find the Leaflet.js repository at https://github.com/Leaflet/Leaflet. Please review the Leaflet.js license for licensing details. Also thanks to the leaflet-easyPrint plugin creator for a nice way to print/screenshot the leaflet container.
 
 ### Font Awesome
-#### Font Awesome for its wonderful icons. The free version of Font Awesome (Version 6.4.0) utilized in GoGrow (as of GoGrow version 0.4.4) is under an open-source license. More information can be found at https://fontawesome.com/ and their repository on GitHub: https://github.com/FortAwesome/Font-Awesome. Please review the Font Awesome license for licensing details.
+#### Font Awesome for its icons. The free version of Font Awesome (Version 6.4.0) utilized in GoGrow is under an open-source license. More information can be found at https://fontawesome.com/ and their repository on GitHub: https://github.com/FortAwesome/Font-Awesome. Please review the Font Awesome license for licensing details.
 
 ### Quill
-#### - Powerful and open source rich text editor. It enables the rich text formatting on the GoGrow journal, and it is a superb and lightweight project for this kind of use-case and I highly recommend it! More information can be found at https://quilljs.com/ and their repository on GitHub: https://github.com/quilljs/quill
-#### - Also a huge thank you to the creator of the Quill image uploader module that made my life a bit easier making GoGrow. The github repo for that project is at: https://github.com/NoelOConnell/quill-image-uploader and the MIT license is included in the app's file directory "/static/scripts/QuillImageUploaderLicense.txt" along with the embedded files
+#### Powerful and open source rich text editor. It enables the rich text formatting on the GoGrow journal. More information can be found at https://quilljs.com/ and their repository on GitHub: https://github.com/quilljs/quill
+#### Also a huge thank you to the creator of the Quill image uploader module. The github repo for that project is at: https://github.com/NoelOConnell/quill-image-uploader and the MIT license is included in the app's file directory "/static/scripts/QuillImageUploaderLicense.txt" along with the embedded files
 
 
 ## The GoGrow App Copyright and Authorship
-copyright 2023 [Firespawn Studios, LLC - Digital and Physical Arts Studio](https://firespawnstudios.net/)
+copyright 2023 [Firespawn Studios LLC - Digital and Physical Arts Studio](https://firespawnstudios.net/)

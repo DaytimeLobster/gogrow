@@ -7,6 +7,7 @@
         <h3 id="selected-folder-name">Selected Folder: None</h3>
         <div class="upload-container">
             <form id="upload-form" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <label class="choose-image-text" for="image" title="PNG or JPG supported">Upload an image below</label>
                 <input class="choosefile-btn" type="file" id="image" name="image" aria-describedby="image-help">
                 <input class="submit-btn" type="submit" value="UPLOAD IMAGE">

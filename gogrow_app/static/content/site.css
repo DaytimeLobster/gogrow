@@ -1,29 +1,62 @@
+/*  Navbar (Bootstrap 5)  */
+.gogrow-navbar {
+    background-color: var(--tertiary-bg) !important;
+    color: var(--primary-text) !important;
+    box-shadow: 0 0 2px rgba(0,0,0,0.4), 0 0 5px #ccc, 0 0 8px rgba(0,0,0,0.1), 0 0 10px #fff;
+}
+
 .navbar-brand {
     display: flex;
     align-items: baseline;
     color: var(--primary-text) !important;
-    font-family: Candara;
+    font-family: Candara, sans-serif;
     font-size: 20px;
     margin: 0;
 }
 
+.navbar-brand:hover {
+    color: var(--primary-hover-bg) !important;
+}
+
 .navbar-brand-version {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 #version {
     color: palegreen;
     font-size: 10px;
     font-family: Palatino, serif;
-    margin-left: 5px; /* add a small gap between brand name and version */
+    margin-left: 5px;
 }
 
-.navbar-brand-version {
-    display: flex;
-    flex-direction: column;
-    align-items: start; /* to align to left */
+.navbar-tagline {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/* Bootstrap 5 nav links */
+.gogrow-navbar .nav-link {
+    color: var(--primary-text) !important;
+}
+
+.gogrow-navbar .nav-link:hover {
+    color: var(--primary-hover-bg) !important;
+}
+
+/* Mobile toggler */
+.navbar-toggler {
+    border-color: var(--primary-text) !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+@media (max-width: 991px) {
+    .navbar-brand { font-size: 14px; }
+    #version { font-size: 10px; }
 }
 
 input::placeholder,
@@ -33,74 +66,9 @@ textarea::placeholder {
     font-style: italic;
 }
 
-.navbar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    background-color: var(--tertiary-bg) !important;
-    color: var(--primary-text) !important;
-}
-
-.navbar-toggle {
-    background-color: var(--secondary-bg) !important;
-    color: var(--secondary-text) !important;
-}
-
-.navbar-toggler {
-    background-color: var(--secondary-bg) !important;
-    color: var(--secondary-text) !important;
-}
-
-@media (max-width: 991px) {
-    .navbar-brand {
-        font-size: 14px; /* adjust as necessary */
-    }
-
-    #version {
-        font-size: 10px; /* adjust as necessary */
-    }
-}
-
-.navbar {
-    position: fixed;
-    background-color: var(--tertiary-bg) !important;
-    color: var(--primary-text) !important;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4), 0 0 5px #ccc, 0 0 8px rgba(0, 0, 0, 0.1), 0 0 10px #fff;
-}
-
-    .navbar-brand:hover {
-        color: var(--primary-hover-bg) !important;
-    }
-
-.navbar .nav:hover {
-    color: var(--primary-hover-bg) !important;
-}
-
-.navbar-inverse .navbar-nav > li > a {
-    color: var(--primary-text) !important;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: var(--primary-hover-bg) !important;
-}
-
-.nav .navbar-nav:hover {
-    background-color: var(--primary-hover-bg) !important;
-    color: var(--primary-hover-bg) !important;
-}
-
-.navbar-tagline {
-    font-size: 0.8em;
-    font-weight: normal;
-}
-
-.navbar-inverse .navbar-toggle .icon-bar {
-    background-color: palegreen;
-}
-
 body {
     background-color: var(--primary-bg) !important;
+    padding-top: 56px;
     padding-bottom: 20px;
     color: var(--primary-text) !important;
 }
@@ -154,7 +122,7 @@ body {
 .sidebar {
     position: fixed;
     width: 275px;
-    top: 50px;
+    top: 56px;
     bottom: 0;
     left: 0;
     background-color: #f8f9fa;
@@ -310,7 +278,7 @@ body {
 }
 
 .leaflet-control-zoom {
-    margin-top: 35px;
+    margin-top: 10px;
 }
 
 @media (max-width: 767px) {
@@ -324,7 +292,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-width: 200px; /* Adjust the width as desired */
+    min-width: 200px;
     background-color: var(--tertiary-bg) !important;
     color: var(--tertiary-bg-text) !important;
     font-family: Arial, sans-serif;
@@ -389,7 +357,7 @@ body {
 
 .map-markers-view-container {
     position: absolute;
-    top: 50px;
+    top: 56px;
     left: 275px;
     bottom: 0;
     width: calc(100% - 275px);
@@ -642,16 +610,15 @@ input[type="checkbox"].input-validation-error {
             color: var(--primary-hover-text);
         }
 
-/* Table striped rows */
-
+/* Table striped rows - override Bootstrap 5 */
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-    background-color: var(--table-row-bg);
+    background-color: var(--table-row-bg) !important;
 }
 
 .table-striped > tbody > tr:nth-child(even) > td,
 .table-striped > tbody > tr:nth-child(even) > th {
-    background-color: var(--table-row-alt-bg);
+    background-color: var(--table-row-alt-bg) !important;
 }
 
 #edit-marker-modal {
@@ -1002,7 +969,7 @@ tr.highlight, tr.highlight td {
     .journal-sidebar {
         width: 300px;
         position: fixed;
-        top: 40px;
+        top: 56px;
         right: 0;
         bottom: 0;
     }
@@ -1069,13 +1036,13 @@ tr.highlight, tr.highlight td {
 /* Styles for the Journal Sidebar */
 .journal-sidebar {
     position: fixed;
-    top: 0;
+    top: 56px;
     right: 0;
     bottom: 0;
     padding: 20px;
     background-color: var(--tertiary-bg-alt) !important;
     overflow-y: auto;
-    height: calc(100vh - 0px);
+    height: calc(100vh - 56px);
     text-align: center;
     justify-content: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -1186,7 +1153,7 @@ tr.highlight, tr.highlight td {
     .journal-sidebar {
         width: 275px;
         position: fixed;
-        top: 40px;
+        top: 56px;
         right: 0;
         bottom: 0;
     }

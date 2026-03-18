@@ -195,15 +195,15 @@
     color: var(--table-row-text);
 }
 
-/* Overriding Bootstrap's .table-striped styles */
+/* Overriding Bootstrap 5's .table-striped styles */
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-    background-color: var(--table-row-bg);
+    background-color: var(--table-row-bg) !important;
 }
 
 .table-striped > tbody > tr:nth-child(even) > td,
 .table-striped > tbody > tr:nth-child(even) > th {
-    background-color: var(--table-row-alt-bg);
+    background-color: var(--table-row-alt-bg) !important;
 }
 
 .sidebar {
